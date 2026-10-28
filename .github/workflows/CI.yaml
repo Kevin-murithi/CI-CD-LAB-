@@ -1,3 +1,4 @@
+
 name: CI
 
 on:
@@ -32,3 +33,6 @@ jobs:
 
       - name: Verify application
         run: npm run verify
+
+      - name: Build Docker image
+        run: docker build -t cicd-test-app:${{ github.sha }} .
